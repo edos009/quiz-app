@@ -1,18 +1,43 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setAmountCorrectAnswers,
+  setPassPercentage,
+  setStep,
+} from "../../store/quizReducer";
+
+import questionsData from "../../utils/questions.json";
 
 import styles from "./Game.module.scss";
 
 const Game = () => {
+  const { step, passPercentage } = useSelector((state) => state.quiz);
+  const dispatch = useDispatch();
+
+  const question = questionsData[step];
+
   return (
     <>
       <div className={styles.progress}>
-        <div style={{ width: "50%" }} className={styles.progress__inner}></div>
+        <div
+          style={{ width: `${passPercentage}%` }}
+          className={styles.progress__inner}
+        ></div>
       </div>
-      <h1>Что такое useState?</h1>
+      <h1>{question.title}</h1>
       <ul>
-        <li>Это функция для хранения данных компонента</li>
-        <li>Это глобальный стейт</li>
-        <li>Это когда на ты никому не нужен</li>
+        {question.variants.map((item, index) => (
+          <li
+            key={index}
+            onClick={() => {
+              dispatch(setAmountCorrectAnswers({ index }));
+              dispatch(setStep());
+              dispatch(setPassPercentage());
+            }}
+          >
+            {item}
+          </li>
+        ))}
       </ul>
     </>
   );

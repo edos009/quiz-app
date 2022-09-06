@@ -21,5 +21,66 @@
       "Это тот же HTML, но с возможностью выполнять JS-код"
     ],
     "correct": 2
+  },
+  {
+    "title": "Сколько родительских HTML тегов может быть выведено в React JS компоненте?",
+    "variants": ["Всегда 1", "Не более 3", "Неограниченное количество"],
+    "correct": 0
+  },
+  {
+    "title": "Где правильно выведен компонент через рендер?",
+    "variants": ["<Test>", "</Test>", "<Test />"],
+    "correct": 2
+  },
+  {
+    "title": "Какой метод отвечает за вывод информации через React JS компонент?",
+    "variants": ["ReactDOM", "render", "react"],
+    "correct": 1
+  },
+  {
+    "title": "Какая компания разработала React JS?",
+    "variants": ["Twitter", "Google", "Facebook"],
+    "correct": 2
+  },
+  {
+    "title": "От какого класса идет наследование всех компонентов?",
+    "variants": ["Component", "ReactComponent", "React.Component"],
+    "correct": 2
+  },
+  {
+    "title": "Где правильно создан компонент?",
+    "variants": [
+      "class App extends Component {}",
+      "class App extends React.Component {}",
+      "class App extends React.Component ({})"
+    ],
+    "correct": 1
+  },
+  {
+    "title": "Где правильно передена функция в качестве свойства?",
+    "variants": [
+      "argument={this.someFunction}",
+      "argument={this.someFunction {}}",
+      "argument={this.someFunction ()}"
+    ],
+    "correct": 0
+  },
+  {
+    "title": "Куда можно встроить готовый код из метода render()?",
+    "variants": [
+      "Только в div",
+      "Только в тег, у которого есть id",
+      "В любой тег"
+    ],
+    "correct": 2
+  },
+  {
+    "title": "Чем свойства отличаются от состояний?",
+    "variants": [
+      "Свойства для работы со значениями, состояния для работы с функциями",
+      "Состояния можно изменять, свойства нельзя",
+      "Свойства можно изменять, состояния нельзя"
+    ],
+    "correct": 1
   }
 ]
